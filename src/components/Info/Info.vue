@@ -6,18 +6,18 @@
     <span class="info__row"
       >Выбран пользователь <b>{{ fullname }}</b></span
     >
-    <span class="info__row">Описание:</span>
-    <textarea rows="8" cols="80" :value="description" />
-    <span class="info__row"
+    <span class="info__row" v-if="description">Описание:</span>
+    <textarea rows="8" cols="80" :value="description" v-if="description" />
+    <span class="info__row" v-if="address"
       >Адрес проживани: <b>{{ address.streetAddress }}</b></span
     >
-    <span class="info__row"
+    <span class="info__row" v-if="address"
       >Город: <b>{{ address.city }}</b></span
     >
-    <span class="info__row"
+    <span class="info__row" v-if="address"
       >Провинция/штат: <b>{{ address.state }}</b></span
     >
-    <span class="info__row"
+    <span class="info__row" v-if="address"
       >Индекс: <b>{{ address.zip }}</b></span
     >
   </div>
