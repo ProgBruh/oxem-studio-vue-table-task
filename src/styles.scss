@@ -1,8 +1,47 @@
-@import './components/App.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+:root {
+  font-size: 1px;
+  font-family: 'Roboto', sans-serif;
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   height: 100%;
 }
+
+body {
+  display: flex;
+}
+
+@mixin blue-button {
+  background-color: #2980b9;
+
+  font-size: 14rem;
+  line-height: 27rem;
+  color: white;
+
+  border: none;
+  border-left: 2rem solid #34495e;
+  border-top: 2rem solid #34495e;
+  border-right: 2rem solid #34495e;
+  border-bottom: 4rem solid #34495e;
+  border-radius: 7rem;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5499c7;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @content;
+}
+
+@import './components/App.scss';

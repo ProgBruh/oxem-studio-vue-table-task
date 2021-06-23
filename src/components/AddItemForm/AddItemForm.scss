@@ -1,0 +1,68 @@
+.add-item-form {
+  width: 75%;
+  max-height: 0;
+
+  overflow: hidden;
+
+  margin-top: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  transition: max-height 0.5s ease-out;
+
+  &--active {
+    max-height: 260rem;
+    transition: max-height 0.35s ease-in;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10rem;
+  }
+
+  &__name {
+    width: 10%;
+
+    font-size: 14rem;
+    line-height: 27rem;
+    font-weight: 400;
+    color: #34495e;
+  }
+
+  &__input {
+    flex-grow: 1;
+
+    padding-bottom: 5rem;
+
+    border: none;
+    border-bottom: 2rem solid #34495e;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--valid {
+      border-color: #239b56;
+    }
+
+    &--invalid {
+      border-color: #b03a2e;
+    }
+  }
+
+  &__button {
+    width: max-content;
+    margin-left: auto;
+    @include blue-button;
+
+    &--disabled {
+      background-color: #aeb6bf;
+
+      &:hover {
+        background-color: #aeb6bf;
+      }
+    }
+  }
+}

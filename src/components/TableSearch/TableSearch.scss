@@ -1,0 +1,52 @@
+.table-search {
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    padding-bottom: 5rem;
+
+    border-bottom: 2rem solid #34495e;
+
+    font-size: 14rem;
+    line-height: 27rem;
+
+    margin-right: 15rem;
+  }
+
+  &__input {
+    width: 200rem;
+
+    font-size: 12rem;
+    line-height: 27rem;
+    color: #34495e;
+
+    margin-right: 10rem;
+
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__clear-button {
+    background-color: inherit;
+
+    width: max-content;
+
+    border: none;
+
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    @include blue-button;
+  }
+}

@@ -1,0 +1,31 @@
+.info {
+  padding-top: 30rem;
+  padding-bottom: 30rem;
+
+  border-top: 1rem solid #abb2b9;
+
+  position: relative;
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    background-color: inherit;
+
+    border: none;
+
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__row {
+    display: block;
+    font-size: 12rem;
+    line-height: 27rem;
+    font-weight: 300;
+  }
+}

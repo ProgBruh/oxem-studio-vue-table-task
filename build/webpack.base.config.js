@@ -1,10 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DotenvWebpack = require('dotenv-webpack');
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 
 const PATHS = {
   src: path.resolve(__dirname, '../src'),
   dist: path.resolve(__dirname, '../dist'),
+  env: path.resolve(__dirname, '../.env'),
 };
 
 module.exports = {
@@ -33,6 +35,7 @@ module.exports = {
               },
             ],
           ],
+          plugins: ['@babel/transform-runtime'],
         },
       },
       {
@@ -54,5 +57,6 @@ module.exports = {
       template: `${PATHS.src}/index.html`,
       filename: 'index.html',
     }),
+    new DotenvWebpack({ path: PATHS.env }),
   ],
 };

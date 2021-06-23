@@ -1,0 +1,44 @@
+.table-head-col {
+  background-color: #e5e8e8;
+  border: 2rem solid #808b96;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #d4e6f1;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  &__name {
+    font-size: 17rem;
+    line-height: 37rem;
+    margin-right: 5rem;
+    font-weight: 400;
+    color: #17202a;
+    text-transform: capitalize;
+  }
+
+  &__icon-wrapper {
+    font-size: 12rem;
+
+    &--up {
+      & > svg {
+        color: #239b56;
+      }
+    }
+
+    &--down {
+      & > svg {
+        color: #b03a2e;
+      }
+    }
+  }
+}

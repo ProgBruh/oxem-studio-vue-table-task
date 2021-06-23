@@ -1,0 +1,2 @@
+export const UPDATE_TABLE_STATE = 'UPDATE_TABLE_STATE';
+export const ADD_INTO_ITEMS = 'ADD_INTO_ITEMS';
