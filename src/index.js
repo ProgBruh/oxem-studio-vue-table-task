@@ -11,6 +11,7 @@ import {
   faSpinner,
   faFeather,
   faWeightHanging,
+  faExclamationTriangle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import store from './store';
@@ -29,6 +30,7 @@ library.add(
   faSpinner,
   faFeather,
   faWeightHanging,
+  faExclamationTriangle,
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

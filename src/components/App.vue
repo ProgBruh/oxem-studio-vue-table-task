@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="app">
+  <div class="app" v-if="!invalidScreenSize">
     <template v-if="mode">
       <template v-if="loaded">
         <template v-if="correctItems">
@@ -28,6 +28,14 @@
     </template>
     <Select @set-mode="setMode" v-else />
   </div>
+  <div class="app-invalid" v-else>
+    <span class="app-invalid__info"> Неподдерживаемый браузер </span>
+    <font-awesome-icon
+      icon="exclamation-triangle"
+      size="lg"
+      class="app-invalid__icon"
+    />
+  </div>
 </template>
 
 <script>
@@ -54,6 +62,7 @@ export default {
     return {
       mode: null,
       showAddItemForm: false,
+      invalidScreenSize: false,
     };
   },
 
@@ -138,6 +147,26 @@ export default {
       this.mode = mode;
       await this.GET_TABLE_DATA(mode);
     },
+  },
+
+  mounted() {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 820) {
+        this.invalidScreenSize = true;
+      } else {
+        this.invalidScreenSize = false;
+      }
+    });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', () => {
+      if (window.innerWidth < 820) {
+        this.invalidScreenSize = true;
+      } else {
+        this.invalidScreenSize = false;
+      }
+    });
   },
 };
 </script>
